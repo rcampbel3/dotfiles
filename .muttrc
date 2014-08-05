@@ -1,0 +1,58 @@
+# thanks to http://jrom.net/gmail-in-mutt
+#
+# Me
+set from = "ross@vettersoftware.com"
+set realname = "Ross Campbell"
+
+# My credentials
+set smtp_url = "smtp://<google_apps_email_address>@smtp.gmail.com:587/"
+set smtp_pass = "<gmail_password>"
+set imap_user = "<google_apps_email_address>"
+set imap_pass = "<gmail_password>"
+
+# My mailboxes
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+
+# Where to put the stuff
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+# Composing
+set autoedit = yes # default: no
+set fast_reply = yes # default: no
+
+
+# Etc
+set mail_check = 30
+set move = no
+set imap_keepalive = 900
+set sort = threads
+set sort_aux = reverse-last-date-received
+set editor = "vim"
+
+# auto_view
+auto_view text/html
+alternative_order text/enriched text/plain text/html
+
+# colors
+color normal	white black
+color attachment brightyellow black
+color hdrdefault cyan black
+color indicator brightyellow red
+color markers	brightred black
+color quoted	green black
+color signature cyan black
+color status	brightwhite blue
+color tilde	blue black
+color tree	magenta black
+color error red default
+#color header	brightgreen black ^From:
+#color header	brightcyan black ^To:
+#color header	brightcyan black ^Reply-To:
+#color header	brightcyan black ^Cc:
+#color header	brightblue black ^Subject:
+#color body	brightred black [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+#color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
